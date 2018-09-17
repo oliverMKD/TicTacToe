@@ -1,5 +1,7 @@
 package com.oli.tictactoe;
 
+import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,12 +21,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+    Button buttonReset;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Old Typography.ttf");
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
@@ -35,16 +40,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);
+                buttons[i][j].setTypeface(typeface);
             }
         }
 
-        Button buttonReset = findViewById(R.id.button_reset);
+        buttonReset = findViewById(R.id.button_reset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetGame();
             }
         });
+        fontovi();
+    }
+    public void fontovi(){
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Old Typography.ttf");
+        textViewPlayer1.setTypeface(typeface);
+        Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/Old Typography.ttf");
+        textViewPlayer2.setTypeface(typeface1);
+        buttonReset.setTypeface(typeface1);
+
 
     }
 

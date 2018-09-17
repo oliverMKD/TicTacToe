@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/pozadina"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Player 1: 0"
             android:freezesText="true"
-            android:textSize="30sp" />
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/text_view_p2"
@@ -27,7 +28,7 @@
             android:layout_below="@+id/text_view_p1"
             android:text="Player 2: 0"
             android:freezesText="true"
-            android:textSize="30sp" />
+            android:textSize="40sp" />
 
         <Button
             android:id="@+id/button_reset"
@@ -36,6 +37,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="33dp"
+            android:textSize="30sp"
             android:text="reset" />
 
     </RelativeLayout>
